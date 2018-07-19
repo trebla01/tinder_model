@@ -34,7 +34,7 @@ class Full_Graph:
                         self.half_matches.append((user, potential_match))
 
     def summarize_network(self):
-        pass
+        self.summarize_matches()
 
     def summarize_matches(self):
         for match in self.half_matches:
@@ -42,6 +42,7 @@ class Full_Graph:
         for match in self.matches:
             print("Full match: ", match)
 
+    #TODO: finish this
     def summarize_user_experience(self):
         for user in self.graph:
             fail = 0
@@ -50,7 +51,7 @@ class Full_Graph:
                 if match[0] == user:
                     fail += 1
             for match in self.matches:
-                if match[0] == user or match[1] == user
+                if match[0] == user or match[1] == user:
                     success += 1
             percent_success = success / (success + fail) * 100
 
