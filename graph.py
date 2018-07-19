@@ -16,7 +16,9 @@ class Full_Graph:
                 if person != new_person and person.gender == "male":
                     self.graph[person].append(new_person)
                     self.graph[new_person].append(person)
-        
+
+    def run_network(self):
+        pass
 
 # a person has several traits
 # male/female
