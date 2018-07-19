@@ -1,10 +1,16 @@
 from graph import *
 
-#make 5 males and 5 females and add it to the network
+# user defined data
+num_males = 10
+num_females = 10
+male_right_swipe = 60
+female_right_swipe = 40
+
 initial_people = []
-for i in range(10):
-    initial_people.append(Person(i, "male", 60))
-    initial_people.append(Person(i+5, "female", 40))
+for i in range(num_males):
+    initial_people.append(Person(i, "male", male_right_swipe))
+for i in range(num_females):
+    initial_people.append(Person(i+num_females, "female", female_right_swipe))
 
 network = Full_Graph()
 for individual in initial_people:

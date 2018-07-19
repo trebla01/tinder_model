@@ -35,6 +35,7 @@ class Full_Graph:
 
     def summarize_network(self):
         self.summarize_matches()
+        self.summarize_user_experience()
 
     def summarize_matches(self):
         for match in self.half_matches:
@@ -42,8 +43,8 @@ class Full_Graph:
         for match in self.matches:
             print("Full match: ", match)
 
-    #TODO: finish this
     def summarize_user_experience(self):
+
         for user in self.graph:
             fail = 0
             success = 0
@@ -53,8 +54,11 @@ class Full_Graph:
             for match in self.matches:
                 if match[0] == user or match[1] == user:
                     success += 1
-            percent_success = success / (success + fail) * 100
-
+            if (success + fail) == 0:
+                percent_success = "did not match anyone"
+            else:
+                percent_success = round(success / (success + fail) * 100, 2)
+            print ("{}: {} percent success, {} swiped, {} number of matches". format(user, percent_success, fail+success, success))
 
 # a person has several traits
 # male/female
